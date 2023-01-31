@@ -126,16 +126,18 @@ resource "google_cloudfunctions_function" "my_function" {
     runtime = "nodejs16"
     trigger_http     = true
     ingress_settings = "ALLOW_ALL"
+    source_archive_bucket = google_storage_bucket.function_source_bucket.name
+    source_archive_object = google_storage_bucket_object.function_source_bucket_object.name
 }
 
-resource "google_storage_bucket" "source_bucket" {
-  name = "function-bucket"
+resource "google_storage_bucket" "function_source_bucket" {
+  name = "function-bucket-1234"
   location = "us-central1"
 }
 
-resource "google_storage_bucket_object" "source_code" {
-  name   = "object-name"
-  bucket = google_storage_bucket.source_bucket.name
+resource "google_storage_bucket_object" "function_source_bucket_object" {
+  name   = "function-bucket-object"
+  bucket = google_storage_bucket.function_source_bucket.name
   source = data.archive_file.my_function_zip.output_path
 }
 ```
