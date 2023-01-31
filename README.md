@@ -174,6 +174,7 @@ Now, we can run `terraform apply` and get, as the output, the URL that triggers 
 
 
 And finally, we can trigger it:
+
 ![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/0deseeh6av9y6qww9syl.png)
 
 
