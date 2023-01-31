@@ -32,8 +32,10 @@ Here it comes the `tfvars` file: a file in which you can put all your environmen
 google_project = "project_name"
 ```
 
-And now you can use this variable in your `main.tf`:
+And now you can use this variable in your `main.tf` (you also need to add a block telling Terraform you've declared a variable somewhere else):
 ```hcl
+variable "google_project_name" {}
+
 provider "google" {
 	project = "${var.project_name}"
 	region = "us-central1"
