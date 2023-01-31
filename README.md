@@ -151,6 +151,7 @@ We can fix these things by adding two blocks: one which is for IAM policies and 
 
 > In Terraform, an output block is used to define the desired values that should be displayed when Terraform applies changes to infrastructure.
 > If we run `terraform plan` right now, we can see some properties that will be known once the infrastructure is created. And `https_trigger_url` is exactly what we are looking for!
+
 > ![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/mjk05r60um32uzd097j5.png)
 
 
