@@ -64,15 +64,15 @@ Let's then create the `resource` block for our Google Cloud Function!
 
 We can start by defining a few things, such as the `name`, `description` and `runtime`:
 ```hcl
-resource "google_cloudfunctions_function" "myFunction" {
-	name = "myFunction"
+resource "google_cloudfunctions_function" "my_function" {
+	name = "my_function"
 	description = "the function we are going to deploy"
 	runtime = "nodejs16"
 }
 ```
 
->Note: you may have noticed that we are repeating `myFunction` twice here.
->It happens because we have to set a *name for the resource* - in this case, `myFunction`, which is translated to `google_cloudfunctions_function.my_second_fn` in Terraform - and we also have to set the value of the *name field* of the block, which is going to be used by Google - not Terraform - to identify your function.
+>Note: you may have noticed that we are repeating `my_function` twice here.
+>It happens because we have to set a *name for the resource* - in this case, `my_function`, which is translated to `google_cloudfunctions_function.my_second_fn` in Terraform - and we also have to set the value of the *name field* of the block, which is going to be used by Google - not Terraform - to identify your function.
 
 ## The source code
 However, even though we know these basic properties of our function, *where is the source code?* In the previous tutorial, Google SDK was able to look into our root directory to find our `index.js` file. But here, we only have a Terraform file which specifies our desired state, but no mentions at all about where to find the source code for our function. Let's fix it.
